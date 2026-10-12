@@ -80,6 +80,112 @@
 }
 
 @layer utilities {
+  .hero-bg-gradient {
+    background-image:
+      radial-gradient(ellipse at 15% 20%, color-mix(in srgb, var(--primary) 10%, transparent), transparent 55%),
+      radial-gradient(ellipse at 85% 75%, color-mix(in srgb, var(--primary) 8%, transparent), transparent 50%);
+    background-size: 140% 140%;
+    animation: hero-bg-gradient 18s ease-in-out infinite alternate;
+  }
+
+  @keyframes hero-bg-gradient {
+    from {
+      background-position: 0% 0%, 100% 100%;
+    }
+    to {
+      background-position: 100% 60%, 0% 40%;
+    }
+  }
+
+  .navbar-enter {
+    animation: navbar-enter 500ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .navbar-link-enter {
+    animation: navbar-link-enter 400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  @keyframes navbar-enter {
+    from {
+      opacity: 0;
+      transform: translateY(-0.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes navbar-link-enter {
+    from {
+      opacity: 0;
+      transform: translateY(-0.4rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-bg-float {
+    animation: hero-bg-float 12s ease-in-out infinite alternate;
+  }
+
+  .hero-bg-float-delayed {
+    animation: hero-bg-float 15s ease-in-out -6s infinite alternate-reverse;
+  }
+
+  @keyframes hero-bg-float {
+    from {
+      transform: translate3d(0, -1.5rem, 0) scale(0.95);
+    }
+    to {
+      transform: translate3d(1.5rem, 1.5rem, 0) scale(1.1);
+    }
+  }
+
+  .hero-name-shimmer {
+    color: var(--primary);
+    background-image: linear-gradient(
+      100deg,
+      var(--primary) 35%,
+      color-mix(in srgb, var(--primary) 55%, white) 50%,
+      var(--primary) 65%
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hero-name-shimmer 3.5s ease-in-out infinite;
+  }
+
+  @keyframes hero-name-shimmer {
+    from {
+      background-position: 100% 50%;
+    }
+    to {
+      background-position: 0% 50%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .navbar-enter,
+    .navbar-link-enter {
+      animation: none;
+    }
+
+    .hero-bg-float,
+    .hero-bg-float-delayed,
+    .hero-bg-gradient {
+      animation: none;
+    }
+
+    .hero-name-shimmer {
+      animation: none;
+      background-image: none;
+      -webkit-text-fill-color: var(--primary);
+    }
+  }
+
   .section-pad {
     padding-block: 5rem;
   }
