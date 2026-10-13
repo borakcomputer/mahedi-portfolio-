@@ -31,7 +31,7 @@ export function Navbar() {
             MAHEDI HASAN<span className="text-primary">.</span>
           </span>
         </a>
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {links.map(({ href, label, icon: Icon }, index) => (
             <a
               key={href}
@@ -52,22 +52,28 @@ export function Navbar() {
           </a>
         </nav>
         <button
-          className="transition-transform duration-200 hover:scale-110 md:hidden motion-reduce:transition-none"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:hidden motion-reduce:transition-none"
+          onClick={() => setOpen((isOpen) => !isOpen)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
       {open && (
-        <nav className="animate-in fade-in slide-in-from-top-2 duration-200 border-t border-border bg-background px-4 py-4 md:hidden motion-reduce:animate-none">
+        <nav
+          id="mobile-navigation"
+          className="animate-in fade-in slide-in-from-top-2 duration-200 border-t border-border bg-background px-4 py-4 lg:hidden motion-reduce:animate-none"
+        >
           {links.map(({ href, label, icon: Icon }, index) => (
             <a
               key={href}
               href={href}
               onClick={() => setOpen(false)}
               style={{ animationDelay: `${index * 60}ms` }}
-              className="navbar-link-enter flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:translate-x-1 hover:bg-secondary hover:text-foreground motion-reduce:transform-none motion-reduce:transition-none"
+              className="navbar-link-enter flex min-h-11 items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:translate-x-1 hover:bg-secondary hover:text-foreground motion-reduce:transform-none motion-reduce:transition-none"
             >
               <Icon aria-hidden="true" className="h-4 w-4" />
               {label}
