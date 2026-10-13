@@ -25,7 +25,7 @@ export function Hero() {
         <div className="hero-bg-float absolute -left-24 top-16 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
         <div className="hero-bg-float-delayed absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
       </div>
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 md:grid-cols-2 md:px-6 md:py-32">
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-15 px-4 py-20 md:grid-cols-2 md:px-6 md:py-32">
         <div>
           <p className="mb-3 inline-flex animate-in fade-in slide-in-from-bottom-3 duration-700 motion-reduce:animate-none items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <MapPin className="h-3.5 w-3.5 text-primary" />
@@ -76,7 +76,7 @@ export function Hero() {
           <div className="absolute -inset-4 animate-pulse rounded-3xl bg-primary/10 blur-2xl motion-reduce:animate-none" />
           <div className="relative flex aspect-square items-center justify-center rounded-3xl border border-border bg-card text-center shadow-xl transition-transform duration-500 hover:-translate-y-1">
             <div>
-              <div className="mx-auto h-35 w-35 overflow-hidden rounded-full border-4 border-primary/20 bg-primary/10 shadow-lg">
+              <div className="mx-auto h-40 w-40 overflow-hidden rounded-full border-4 border-primary/20 bg-primary/10 shadow-lg">
                 <img  src={adilImage} alt="Mahedi Hasan" className="h-full w-full object-cover" />
               </div>
               <p className="mt-4 text-lg font-semibold">Mahedi Hasan</p>
