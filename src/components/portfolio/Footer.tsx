@@ -1,12 +1,26 @@
-import { ArrowUp, Facebook, Github, Linkedin, Mail, MessageCircle, Phone, X } from "lucide-react";
+import {
+  ArrowUp,
+  Facebook,
+  FolderKanban,
+  Github,
+  GraduationCap,
+  House,
+  Linkedin,
+  Mail,
+  MessageCircle,
+  Phone,
+  UserRound,
+  Wrench,
+  X,
+} from "lucide-react";
 
 const quickLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#education", label: "Education" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home", label: "Home", icon: House },
+  { href: "#about", label: "About", icon: UserRound },
+  { href: "#skills", label: "Skills", icon: Wrench },
+  { href: "#projects", label: "Projects", icon: FolderKanban },
+  { href: "#education", label: "Education", icon: GraduationCap },
+  { href: "#contact", label: "Contact", icon: Mail },
 ];
 
 const socialLinks = [
@@ -54,12 +68,13 @@ export function Footer() {
             Quick Links
           </h2>
           <ul className="mt-5 space-y-3">
-            {quickLinks.map(({ href, label }) => (
+            {quickLinks.map(({ href, label, icon: Icon }) => (
               <li key={href}>
                 <a
                   href={href}
-                  className="text-sm text-slate-400 transition-colors hover:text-primary"
+                  className="flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-primary"
                 >
+                  <Icon aria-hidden="true" className="h-4 w-4" />
                   {label}
                 </a>
               </li>
@@ -79,7 +94,7 @@ export function Footer() {
                 aria-label={label}
                 title={label}
                 style={{ color }}
-                className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.035] transition-all hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08] motion-reduce:transform-none"
+                className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.035] transition-all hover:-translate-y-1 hover:border-white/20 hover:bg-white/8 motion-reduce:transform-none"
               >
                 <Icon className="h-5 w-5" />
               </a>
