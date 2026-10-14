@@ -49,7 +49,20 @@ export function Navbar() {
            contact me </a>
         </nav>
 
-          <button type="button" class="flex h-11 w-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:hidden motion-reduce:transition-none" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation" data-tsd-source="/src/components/portfolio/Navbar.tsx:54:9">…</button>
+        <button
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:hidden motion-reduce:transition-none"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isMenuOpen ? (
+          <X className="h-6 w-6" aria-hidden="true" />
+          ) : (
+          <Menu className="h-6 w-6" aria-hidden="true" />
+          )}
+        </button>
+```
 
         {/* <button className="transition-transform duration-200 hover:scale-110 md:hidden motion-reduce:transition-none" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
