@@ -18,7 +18,7 @@ export function Navbar() {
   return (
     <header className="navbar-enter fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
-        <div className="flex items-center gap-2.5 text-lg font-bold tracking-tight">
+        <a href="" className="flex items-center gap-2.5 text-lg font-bold tracking-tight">
           <span className="h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-primary/20 bg-primary/10 transition-transform duration-300 hover:scale-110">
             <img
               src={adilImage}
@@ -30,7 +30,7 @@ export function Navbar() {
           <span>
             MAHEDI HASAN <span className="text-primary">.</span>
           </span>
-        </div>
+        </a>
         <nav className="hidden items-center gap-8 lg:flex">
           {links.map(({ href, label, icon: Icon }, index) => (
             <a
@@ -55,7 +55,10 @@ export function Navbar() {
         <button
           type="button"
           className="flex h-11 w-11 items-center justify-center rounded-md transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
-          onClick={() => setOpen((prev) => !prev)}
+          onClick={() => {
+            console.log("Menu button clicked");
+            setOpen((prev) => !prev);
+          }}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-navigation"
@@ -80,7 +83,7 @@ export function Navbar() {
               style={{ animationDelay: `${index * 60}ms` }}
               className="navbar-link-enter flex min-h-11 items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:translate-x-1 hover:bg-secondary hover:text-foreground motion-reduce:transform-none motion-reduce:transition-none"
             >
-              <Icon aria-hidden="true" className="h-4 w-4" />
+              <Icon className="h-4 w-4" />
               {label}
             </a>
           ))}
