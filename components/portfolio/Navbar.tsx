@@ -20,12 +20,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
         <a href="#home" className="flex items-center gap-2.5 text-lg font-bold tracking-tight">
           <span className="h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-primary/20 bg-primary/10 transition-transform duration-300 hover:scale-110">
-            <img
-              src={adilImage}
-              alt=""
-              aria-hidden="true"
-              className="h-full w-full object-cover"
-            />
+            <img src={adilImage} alt="" aria-hidden="true" className="h-full w-full object-cover" />
           </span>
           <span>
             MAHEDI HASAN<span className="text-primary">.</span>
@@ -45,28 +40,27 @@ export function Navbar() {
           <a
             href="#contact"
             style={{ animationDelay: `${links.length * 70 + 150}ms` }}
-            className="navbar-link-enter rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-md motion-reduce:transform-none motion-reduce:transition-none">
-           contact me </a>
+            className="navbar-link-enter rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-md motion-reduce:transform-none motion-reduce:transition-none"
+          >
+            contact me{" "}
+          </a>
         </nav>
 
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:hidden motion-reduce:transition-none"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isMenuOpen}
+          className="flex h-11 w-11 items-center justify-center rounded-md transition-transform duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden motion-reduce:transition-none"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
           aria-controls="mobile-navigation"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? (
-          <X className="h-6 w-6" aria-hidden="true" />
+        >
+          {open ? (
+            <X className="h-6 w-6" aria-hidden="true" />
           ) : (
-          <Menu className="h-6 w-6" aria-hidden="true" />
+            <Menu className="h-6 w-6" aria-hidden="true" />
           )}
         </button>
-```
 
-        {/* <button className="transition-transform duration-200 hover:scale-110 md:hidden motion-reduce:transition-none" onClick={() => setOpen(!open)} aria-label="Toggle menu">
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button> */}
       </div>
       {open && (
         <nav className="animate-in fade-in slide-in-from-top-2 duration-200 border-t border-border bg-background px-4 py-4 md:hidden motion-reduce:animate-none">
