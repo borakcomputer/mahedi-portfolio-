@@ -66,12 +66,12 @@ export function Navbar() {
             <Menu className="h-6 w-6" aria-hidden="true" />
           )}
         </button>
-
       </div>
       {open && (
         <nav
           id="mobile-navigation"
-          className="animate-in fade-in slide-in-from-top-2 duration-200 border-t border-border bg-background px-4 py-4 md:hidden motion-reduce:animate-none">    
+          className="animate-in fade-in slide-in-from-top-2 duration-200 border-t border-border bg-background px-4 py-4 md:hidden motion-reduce:animate-none"
+        >
           {links.map(({ href, label, icon: Icon }, index) => (
             <a
               key={href}
