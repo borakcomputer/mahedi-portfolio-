@@ -52,15 +52,26 @@ export function Navbar() {
           </a>
         </nav>
 
-        <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        <button
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-md transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+        >
+          {open ? (
+            <X className="h-6 w-6" aria-hidden="true" />
+          ) : (
+            <Menu className="h-6 w-6" aria-hidden="true" />
+          )}
         </button>
+
       </div>
       {open && (
         <nav
           id="mobile-navigation"
-          className="animate-in fade-in slide-in-from-top-2 duration-200 border-t border-border bg-background px-4 py-4 lg:hidden motion-reduce:animate-none"
-        >
+          className="animate-in fade-in slide-in-from-top-2 duration-200 border-t border-border bg-background px-4 py-4 md:hidden motion-reduce:animate-none">    
           {links.map(({ href, label, icon: Icon }, index) => (
             <a
               key={href}
