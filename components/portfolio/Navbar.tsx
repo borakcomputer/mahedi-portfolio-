@@ -45,8 +45,14 @@ export function Navbar() {
             contact me{" "}
           </a>
         </nav>
-
-        <button
+          <button
+          className="lg:hidden"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+        {/* <button
           type="button"
           className="flex h-11 w-11 items-center justify-center rounded-md transition-transform duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden motion-reduce:transition-none"
           onClick={() => setOpen((prev) => !prev)}
@@ -59,7 +65,7 @@ export function Navbar() {
           ) : (
             <Menu className="h-6 w-6" aria-hidden="true" />
           )}
-        </button>
+        </button> */}
 
       </div>
       {open && (
