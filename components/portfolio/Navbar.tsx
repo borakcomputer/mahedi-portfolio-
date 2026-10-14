@@ -48,9 +48,12 @@ export function Navbar() {
             className="navbar-link-enter rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-md motion-reduce:transform-none motion-reduce:transition-none">
            contact me </a>
         </nav>
-        <button className="transition-transform duration-200 hover:scale-110 md:hidden motion-reduce:transition-none" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+
+          <button type="button" class="flex h-11 w-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:hidden motion-reduce:transition-none" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation" data-tsd-source="/src/components/portfolio/Navbar.tsx:54:9">…</button>
+
+        {/* <button className="transition-transform duration-200 hover:scale-110 md:hidden motion-reduce:transition-none" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        </button> */}
       </div>
       {open && (
         <nav className="animate-in fade-in slide-in-from-top-2 duration-200 border-t border-border bg-background px-4 py-4 md:hidden motion-reduce:animate-none">
